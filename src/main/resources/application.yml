@@ -9,3 +9,4 @@ spring:
       server:
         git:
           uri: file:///Users/hyunjin/ideaprojects/git-local-repo
+          default-label: master
