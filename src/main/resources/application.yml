@@ -4,13 +4,24 @@ server:
 spring:
   application:
     name: config-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   profiles:
-    active: native
+    active: local
   cloud:
     config:
       server:
-        native:
-          search-locations: file:///{user.name}/ideaprojects/git-local-repo
-#        git:
-#          uri: file:///Users/hyunjin/ideaprojects/git-local-repo
-#          default-label: master
+#        native:
+#          search-locations: file:///{user.name}/ideaprojects/git-local-repo
+        git:
+          uri: file:///Users/hyunjin/ideaprojects/git-local-repo
+          default-label: master
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
